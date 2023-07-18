@@ -1,0 +1,21 @@
+If the stored records are string data, hashing has to be used to convert strings into 
+hash values and then conpare the hash values.
+
+----- PSUDO CODE -----
+Read the search queries from the search_queries.txt file into a list of query rows.
+Open the CSV file.
+Calculate the number of records per process based on the size of the CSV file and the number of processes.
+Calculate the start and end indices for the current process based on the rank.
+
+Iterate over the records in the CSV file using the start and end indices:
+    Read a row from the CSV file.
+    Calculate the hash value for the current row using a hashing algorithm (e.g., SHA-256).
+    
+    Iterate over the query rows:
+        Calculate the hash value for the current query row using the same hashing algorithm.
+        If the row hash matches the query hash:
+            Print or store the matching row.
+    Continue to the next row in the CSV file.
+
+Close the CSV file.
+Exit the program.
